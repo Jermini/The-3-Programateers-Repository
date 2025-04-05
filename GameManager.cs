@@ -48,20 +48,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // This function is called to add score and update the score text
     public void AddScore(int earnedScore)
     {
         score = score + earnedScore;
         ChangeScoreText(score);
     }
 
+    // This function is called to update the lives text
     public void ChangeLivesText(int currentLives)
     {
         livesText.text = "Lives: " + currentLives;
     }
 
+    // This function is called to update the score text
     public void ChangeScoreText(int currentScore)
     {
         scoreText.text = "Score: " + currentScore;
     }
-
 }
