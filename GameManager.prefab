@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &292054493679749259
+--- !u!1 &5579614714262445417
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 292054493679749261}
-  - component: {fileID: 292054493679749258}
+  - component: {fileID: 632939705134786400}
+  - component: {fileID: 375480065286267362}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,33 +17,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &292054493679749261
+--- !u!4 &632939705134786400
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292054493679749259}
+  m_GameObject: {fileID: 5579614714262445417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &292054493679749258
+--- !u!114 &375480065286267362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292054493679749259}
+  m_GameObject: {fileID: 5579614714262445417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2135e5ad05f2545d195ed58b1a932210, type: 3}
+  m_Script: {fileID: 11500000, guid: d924ebc9bfca8434a9d55cecb1e2a16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyOnePrefab: {fileID: 1075976313871742655, guid: 4b9c3fbf213b14c9a88e63b4a216101f, type: 3}
-  enemyTwoPrefab: {fileID: 0}
-  enemyThreePrefab: {fileID: 5006632780161430655, guid: 3fc329bc4056a0e4194bb3af646e3e29, type: 3}
+  playerPrefab: {fileID: 336099041871532942, guid: 462aafa6746924522a0d1f35ff669364, type: 3}
+  enemyOnePrefab: {fileID: 1057937544878629365, guid: d8aaa48f5718247a0868c9cf1607080a, type: 3}
+  cloudPrefab: {fileID: 3776035735988585312, guid: c77a17d7a7061440d823d4e95788f504, type: 3}
+  horizontalScreenSize: 0
+  verticalScreenSize: 0
