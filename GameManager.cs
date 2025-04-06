@@ -74,12 +74,4 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.65f, Random.Range(-verticalScreenSize, verticalScreenSize) * 0.65f, 0), Quaternion.identity);
     }
-
-    // Makes Player gain a coin score if they collide with a coin powerup
-    public void GainCoinScore(int earnedScore)
-    {
-        score = score + earnedScore;
-        ChangeScoreText(score);
-    }
-
 }
