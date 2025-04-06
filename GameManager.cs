@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
+    public GameObject coinPrefab;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
     public float horizontalScreenSize;
     public float verticalScreenSize;
-    public int score; 
+    public int score;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("CreateEnemy", 1, 3);
+        InvokeRepeating("CreateCoinPowerUp", 1, 10.5f);
         score = 0;
         ChangeScoreText(score);
     }
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Create a new enemy at a random position
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Create a new cloud/sky at a random position
     void CreateSky()
     {
-        for(int i = 0; i < 30; i++)
+        for (int i = 0; i < 30; i++)
         {
             Instantiate(cloudPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize), Random.Range(-verticalScreenSize, verticalScreenSize), 0), Quaternion.identity);
         }
@@ -66,4 +68,18 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = "Score: " + currentScore;
     }
+
+    // Create a coin powerup at a random position
+    void CreateCoinPowerUp()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.65f, Random.Range(-verticalScreenSize, verticalScreenSize) * 0.65f, 0), Quaternion.identity);
+    }
+
+    // Makes Player gain a coin score if they collide with a coin powerup
+    public void GainCoinScore(int earnedScore)
+    {
+        score = score + earnedScore;
+        ChangeScoreText(score);
+    }
+
 }
