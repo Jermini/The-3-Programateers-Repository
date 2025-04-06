@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
+    public GameObject healthPrefab;
     public GameObject coinPrefab;
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("CreateEnemy", 1, 3);
+        InvokeRepeating("CreateHealthPowerUp", 1, 10.5f);
         InvokeRepeating("CreateCoinPowerUp", 1, 10.5f);
         score = 0;
         ChangeScoreText(score);
@@ -67,6 +69,12 @@ public class GameManager : MonoBehaviour
     public void ChangeScoreText(int currentScore)
     {
         scoreText.text = "Score: " + currentScore;
+    }
+
+    // Create a health power-up at a random position
+     void CreateHealthPowerUp()
+    {
+        Instantiate(healthPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.65f, Random.Range(-verticalScreenSize, verticalScreenSize) * 0.65f, 0), Quaternion.identity);
     }
 
     // Create a coin powerup at a random position
